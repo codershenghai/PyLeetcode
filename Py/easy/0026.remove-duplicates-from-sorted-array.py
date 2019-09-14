@@ -4,6 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        # 快慢指针
         low = 0
         for fast in range(1, len(nums)):
             if nums[low] == nums[fast]:
