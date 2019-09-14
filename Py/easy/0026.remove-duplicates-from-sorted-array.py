@@ -16,4 +16,4 @@ class Solution(object):
 
 if __name__ == '__main__':
     Sol = Solution()
-    print(Sol.removeDuplicates([1,1,2,3,4,5,5]))
+    print(Sol.removeDuplicates([1, 1, 2]))
