@@ -1,5 +1,5 @@
 class MinStack(object):
-
+    # 使用python栈的特性
     def __init__(self):
         self.data = []
 
