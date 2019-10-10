@@ -27,6 +27,9 @@ class Solution(object):
         :rtype: ListNode
         """
         # 递归
+        # 1.找终止条件。头结点或头结点的下一个节点为空时终止。
+        # 2.找返回值。返回处理好的链表
+        # 3.本级递归应该做什么。交换前两个节点。
         if not head or not head.next:
             return head
         second = head.next
