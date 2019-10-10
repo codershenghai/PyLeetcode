@@ -6,11 +6,17 @@ class Solution:
         return int(bin(n)[2:].zfill(32)[::-1], base=2)
 
     def reverseBits2(self, n):
-        # 采用位运算，每次将原来的数字向左移动1位，
-        # 就需要把该末尾加到我们的数字中去即可
-        return 0
+        # 采用位运算，设置一个变量res，在每次循环中，
+        # res左移一位，然后加上n的最后一位的值，然后n右移一位，
+        # 这样可以保持res和n既同步又相反
+        res = 0
+        for i in range(32):
+            res <<= 1
+            res += n & 1
+            n >>= 1
+        return int(bin(res), 2)
 
 
 if __name__ == '__main__':
     Sol = Solution()
-    print(Sol.reverseBits1(43261596))
+    print(Sol.reverseBits2(4))
