@@ -7,6 +7,7 @@ class Solution(object):
         # 位运算
         res = 0
         for i in range(n.bit_length()):
+            # 把n与1进行与运算，得到n的最低位
             res += n & 1
             n >>= 1
         return res
