@@ -1,5 +1,3 @@
-map = {}
-map[1] = 12
-map[2] = 24
-print(map.values())
-print(max(map.values()))
+a = [1, 2, 3, 4]
+if a:
+    print(not a)
