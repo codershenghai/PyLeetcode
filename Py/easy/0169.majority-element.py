@@ -18,9 +18,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        # 投票算法
-        # 假设majority出现的次数是m, 总元素个数是N，最终剩余的majority
-        # 个数就是m-(N-m), 即2m-N。
+        # 投票算法。
+        # 假设majority出现的次数是m, 总元素个数是N，最终剩余的majority个数就是m-(N-m), 即2m-N。
         # 所以必须是m > ⌊N/2⌋时才有效。
         vote = 0
         majority = nums[0]
