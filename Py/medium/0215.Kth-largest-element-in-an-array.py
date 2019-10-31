@@ -30,34 +30,42 @@ class QS_Solution:
         # 若pivot == k-1，则nums[pivot]即为答案。
         # 若pivot > k-1，则说明第k大的元素在pivot左边，继续在[left, pivot-1]中寻找。
         # 若pivot < k-1，则说明第k大的元素在pivot右边，继续在[pivot+1, right]中寻找。
-        return
+        self.nums = nums
+        self.k = k
+        return self.select(0, len(nums)-1, k)
 
+    def select(self, left, right, k):
+        """
+        :return: 返回第k大的数
+        """
+        # nums数组中只有一个数，直接返回这个数
+        if left == right:
+            return self.nums[left]
 
-    def Partition(a, low, high):
-        pivot = a[low]
-        while low < high:
-            while low < high and a[high] >= pivot:
-                high -= 1
-            a[low] = a[high]
-            while low < high and a[low] <= pivot:
-                low += 1
-            a[high] = a[low]
-        a[low] = pivot
-        return low
+        # 找到pivot_index
+        pivot_index = self.partition(left, right)
 
-    def select(self, nums, left, right, k):
-        pivot = left
-        if left < right:
-            pivot = Partition(nums, left, right)
-            if pivot < k-1:
-                self.findKthLargest3(nums, left, pivot-1)
-            elif pivot > k-1:
-                self.findKthLargest3(nums, pivot+1, right)
-            else:
-                return nums[pivot]
+        if pivot_index < k-1:
+            return self.select(pivot_index+1, right, k)
+        elif pivot_index > k-1:
+            return self.select(left, pivot_index-1, k)
+        else:
+            return self.nums[pivot_index]
+
+    def partition(self, left, right):
+        pivot = self.nums[left]
+        while left < right:
+            while left < right and self.nums[right] <= pivot:
+                right -= 1
+            self.nums[left] = self.nums[right]
+            while left < right and self.nums[left] >= pivot:
+                left += 1
+            self.nums[right] = self.nums[left]
+        self.nums[left] = pivot
+        return left
 
 
 if __name__ == '__main__':
-    Sol = Solution()
+    Sol = QS_Solution()
     res = Sol.findKthLargest3([3,2,1,5,6,4], k=2)
     print(res)
