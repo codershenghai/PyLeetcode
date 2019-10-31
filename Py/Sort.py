@@ -28,8 +28,10 @@ class Sort:
                 j -= 1
         return a
 
+    # 快速排序是一种分治的排序算法，它将一个数组分成两个子数组，将两部分独立地排序。
     def quick_sort(self, a, low, high):
-        # 快速排序是一种分治的排序算法，它将一个数组分成两个子数组，将两部分独立地排序。
+
+        # 将每个元素与pivot进行比较，并将小于pivot的所有元素移动到pivot的左侧，将大于pivot的所有元素移动到pivot右侧。
         def Partition(a, low, high):
             pivot = a[low]
             while low < high:
@@ -43,9 +45,9 @@ class Sort:
             return low
 
         if low < high:
-            pivos = Partition(a, low, high)
-            self.quick_sort(a, low, pivos-1)
-            self.quick_sort(a, pivos+1, high)
+            pivot = Partition(a, low, high)
+            self.quick_sort(a, low, pivot-1)
+            self.quick_sort(a, pivot+1, high)
         return a
 
 
