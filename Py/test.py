@@ -1,3 +1,7 @@
-a = [1, 2, 3, 4]
-if a:
-    print(not a)
+
+num = 20
+
+for i in (2, 3, 5):
+    while num % i == 0:
+        num /= i
+print(num)
