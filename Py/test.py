@@ -1,7 +1,5 @@
-
-num = 20
-
-for i in (2, 3, 5):
-    while num % i == 0:
-        num /= i
-print(num)
+a = [1, 1, 3]
+visit = {}
+for i in a:
+    visit[i] = i
+print(visit)
