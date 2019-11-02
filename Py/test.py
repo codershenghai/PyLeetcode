@@ -1,5 +1,3 @@
-a = [1, 1, 3]
-visit = {}
-for i in a:
-    visit[i] = i
-print(visit)
+x = set()
+x.add(1)
+print(x)
