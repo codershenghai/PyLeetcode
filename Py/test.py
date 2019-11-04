@@ -1,3 +1,3 @@
-ht = {}
-for i in [1, 2, 3]:
-    ht[i]
+tmp = 11
+tmp = tmp if tmp < 10 else tmp % 10
+print(tmp)
