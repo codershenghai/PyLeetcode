@@ -8,8 +8,6 @@ class Solution:
         if len(strs) == 0:
             return ""
         cur = strs[0]
-        if "" in strs:
-            return ""
         for i in range(1, len(strs)):
             for j in range(len(strs[i])+1):
                 if j < len(cur) and j < len(strs[i]) and cur[j] != strs[i][j]:
@@ -20,5 +18,5 @@ class Solution:
 
 if __name__ == '__main__':
     Sol = Solution()
-    res = Sol.longestCommonPrefix(["a","a"])
+    res = Sol.longestCommonPrefix(["a", "a"])
     print(res)
