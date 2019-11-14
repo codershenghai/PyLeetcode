@@ -1,3 +1,3 @@
-tmp = 11
-tmp = tmp if tmp < 10 else tmp % 10
-print(tmp)
+x = [1, 2, 4]
+x.remove(4)
+print(x)
