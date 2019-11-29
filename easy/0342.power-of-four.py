@@ -9,7 +9,7 @@ class Solution(object):
             return False
         if num != 1:
             if num % 4 == 0:
-                return self.isPowerOfFour1(num/4)
+                return self.isPowerOfFour1(num//4)
             else:
                 return False
         return num == 1
